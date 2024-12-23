@@ -1,0 +1,244 @@
+:root{
+/* ### Primary */
+
+--Strong-cyan: hsl(172, 67%, 45%);
+
+/* ### Neutral */
+
+--Very-dark-cyan: hsl(183, 100%, 15%);
+--Dark-grayish-cyan: hsl(186, 14%, 43%);
+--Grayish-cyan: hsl(184, 14%, 56%);
+--Light-grayish-cyan: hsl(185, 41%, 84%);
+--Very-light-grayish-cyan: hsl(189, 41%, 97%);
+--White: hsl(0, 0%, 100%);
+
+/* ### Error */
+
+--Error: hsl(12, 33%, 57%);
+}
+
+@font-face {
+    font-family: 'Space mono';
+    src: url('./fonts/SpaceMono-Bold.ttf');
+    font-weight: 700;
+}
+
+*,*::before,*::after{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    padding: 2rem 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    font-family: 'Space mono';
+    background-color: var(--Light-grayish-cyan);
+}
+
+main{
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+    border-radius: 2rem;
+    background-color: var(--White);
+}
+
+/* input styles */
+section.input-box{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+label{
+    margin-bottom: .5rem;
+    display: block;
+    color: var(--Dark-grayish-cyan)
+}
+
+span.error-message{
+    color: var(--Error);
+    float: right;
+}
+
+div.tips-box{
+    margin: .7rem 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: .7rem;
+}
+
+input{
+    padding: .5rem 1rem;
+    min-width: 100%;
+    text-align: right;
+    font-size: 24px;
+    font-weight: 700;
+    border-radius: .5rem;
+    border: none;
+    outline: none;
+    color: var(--Very-dark-cyan);
+    background-color: var(--Very-light-grayish-cyan);  
+}
+input:not(input[type="button"]):focus{
+    outline: 2px solid var(--Strong-cyan);
+}
+
+/* Hide spinners in Chrome, Safari, Edge */
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+/* Hide spinners in Firefox */
+
+input[type="number"] {
+    -moz-appearance: textfield; /* Change appearance to textfield */
+}
+
+input.bill-price{
+    background-image: url('./images/icon-dollar.svg');
+    background-repeat: no-repeat;
+    background-position: left 1rem center;
+}
+input.bill-price::placeholder{
+    text-align: right;
+}
+
+input.people{
+    background-image: url('./images/icon-person.svg');
+    background-repeat: no-repeat;
+    background-position: left 1rem center;
+}
+input.people::placeholder{
+    text-align: right;
+}
+
+input.tip-btn{
+    text-align-last: center;
+    color: var(--White);
+    border-radius: .3rem;
+    background-color: var(--Very-dark-cyan);
+}
+
+input.tip-btn:focus{
+    background-color: var(--Strong-cyan);
+    color: var(--Very-dark-cyan);
+}
+
+input.tip-btn:hover{
+    background-color: var(--Light-grayish-cyan);
+    color: var(--Very-dark-cyan);
+    cursor: pointer;
+}
+
+input.custom{
+    background-color: var(--Very-light-grayish-cyan);
+    color: var(--Very-dark-cyan);
+}
+
+input::placeholder{
+    font-family: 'Space mono';
+    text-align: center;
+    color: var(--Very-dark-cyan);
+}
+
+input.people{
+    background-color: var(--Very-light-grayish-cyan);
+}
+
+/* result styles */
+
+section.result-box{
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    border-radius: 1rem;
+    background-color: var(--Very-dark-cyan);
+}
+
+div.info-box{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+div.title-box h2{
+    color: var(--White);
+    font-size: 1rem;
+}
+
+div.title-box p{
+    color: var(--Grayish-cyan);
+}
+
+div.price-box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+span.price{
+    color: var(--Strong-cyan);
+    font-size: 2rem;
+}
+
+button{
+    min-width: 100%;
+    padding: .8rem;
+    border-radius: .5rem;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--Very-dark-cyan);
+    background-color: var(--Strong-cyan);
+}
+button:hover{
+    background-color: var(--Light-grayish-cyan);
+    color: var(--Very-dark-cyan);
+    cursor: pointer;
+}
+
+div.attribution{
+    text-align: center;
+}
+
+@media (min-width: 1000px) {
+    body{
+        padding: 2rem;
+    }
+    header{
+        margin-bottom: 1rem;
+    }
+    main{
+        max-width: 900px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    section.input-box{
+        gap: 2rem;
+    }
+    div.tips-box{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    section.result-box{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
